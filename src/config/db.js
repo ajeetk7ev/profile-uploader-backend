@@ -5,7 +5,7 @@ dotenv.config();
 
 const { Pool } = pg;
 
-const isSslEnabled = process.env.DB_SSL === 'true';
+const isSslEnabled = process.env.DB_SSL === 'true' || process.env.DB_HOST?.includes('rds.amazonaws.com');
 
 const poolConfig = {
   host: process.env.DB_HOST || 'localhost',
