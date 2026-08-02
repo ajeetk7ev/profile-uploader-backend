@@ -3,6 +3,7 @@
 CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(100) NOT NULL,
+    middle_name VARCHAR(100) NULL,
     last_name VARCHAR(100) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     age INT NOT NULL CHECK (age > 0 AND age < 150),
